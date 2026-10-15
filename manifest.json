@@ -1,0 +1,20 @@
+{
+  "manifest_version": 3,
+  "name": "YouTube Comment Media Uploader",
+  "version": "1.0.0",
+  "description": "Upload JPG, GIF, or MP4 files and paste the public URL into a YouTube comment field.",
+  "permissions": ["storage", "activeTab"],
+  "host_permissions": [
+    "*://*.youtube.com/*",
+    "https://api.anonfiles.com/*",
+    "https://*.anonfiles.com/*",
+    "https://0x0.st/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["*://*.youtube.com/*"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}
