@@ -6,6 +6,7 @@
   "permissions": ["storage", "activeTab"],
   "host_permissions": [
     "*://*.youtube.com/*",
+    "http://localhost:3000/*",
     "https://api.anonfiles.com/*",
     "https://*.anonfiles.com/*",
     "https://0x0.st/*"

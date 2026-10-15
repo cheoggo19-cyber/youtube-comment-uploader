@@ -7,7 +7,7 @@
   ];
 
   const MAX_FILE_SIZE_MB = 50;
-  const UPLOAD_SERVICE = "https://api.anonfiles.com/upload";
+  const UPLOAD_SERVICE = "http://localhost:3000/upload";
 
   function log(message) {
     console.log("[YT Media Uploader]", message);
@@ -116,7 +116,8 @@
     });
 
     if (!response.ok) {
-      throw new Error("업로드 서버 응답이 실패했습니다.");
+      const errorBody = await response.text();
+      throw new Error(`업로드 서버 응답이 실패했습니다. (${response.status}) ${errorBody || "unknown error"}`);
     }
 
     const result = await response.json();
